@@ -1,0 +1,15 @@
+npm commands
+
+1. npm init -y  => package.json -> all packages, their versions, application commands scripts 
+
+2. npm i packageName
+
+3. npm update packageName
+
+4. npm uninstall packageName
+
+5. npx packageName 
+
+
+// create-react-app => react starter code 
+
