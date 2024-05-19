@@ -10,6 +10,8 @@ npm commands
 
 5. npx packageName 
 
+6. npm i => this command use package.json and install all packages code in node_modules
+
 
 // create-react-app => react starter code 
 
