@@ -13,3 +13,6 @@ npm commands
 
 // create-react-app => react starter code 
 
+
+npx create-react-app .
+
