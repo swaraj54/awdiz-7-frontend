@@ -12,8 +12,9 @@ const Todo = () => {
     setTodo("");
   }
   function deleteTodo(index) {
-    allTodos.splice(index, 1);
-    setAllTodos(allTodos);
+    const taskcopy = [...allTodos];
+    taskcopy.splice(index, 1);
+    setAllTodos(taskcopy);
   }
   return (
     <div>
