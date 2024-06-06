@@ -14,6 +14,7 @@ import AllProducts from "./02-06/AllProducts";
 import FunctionProp from "./04-06/FunctionProp";
 import StyledComponents from "./04-06/StyledComponents";
 import InlineStyling from "./04-06/InlineStyling";
+import Todo from "./06-06/Todo";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path="/function-prop" element={<FunctionProp />} />
         <Route path="/styled-components" element={<StyledComponents />} />
         <Route path="/inline-styling" element={<InlineStyling />} />
+        <Route path="/todo" element={<Todo />} />
       </Routes>
     </div>
   );
