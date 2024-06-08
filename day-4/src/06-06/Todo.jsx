@@ -12,9 +12,9 @@ const Todo = () => {
     setTodo("");
   }
   function deleteTodo(index) {
-    const taskcopy = [...allTodos];
-    taskcopy.splice(index, 1);
-    setAllTodos(taskcopy);
+    const newArray = [...allTodos];
+    newArray.splice(index, 1);
+    setAllTodos(newArray);
   }
   return (
     <div>

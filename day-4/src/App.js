@@ -15,6 +15,8 @@ import FunctionProp from "./04-06/FunctionProp";
 import StyledComponents from "./04-06/StyledComponents";
 import InlineStyling from "./04-06/InlineStyling";
 import Todo from "./06-06/Todo";
+import Register from "./08-06/Register";
+import Login from "./08-06/Login";
 
 function App() {
   return (
@@ -39,6 +41,8 @@ function App() {
         <Route path="/styled-components" element={<StyledComponents />} />
         <Route path="/inline-styling" element={<InlineStyling />} />
         <Route path="/todo" element={<Todo />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </div>
   );
