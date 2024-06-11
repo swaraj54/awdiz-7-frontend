@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
@@ -9,6 +9,9 @@ const Register = () => {
     email: "",
     password: "",
   });
+  const [errors, setErrors] = useState([]);
+  const [disable, setDisable] = useState(true);
+  console.log(errors, "errors");
 
   console.log(userData, "userData");
   function handleChange(event) {
@@ -47,6 +50,25 @@ const Register = () => {
     }
   }
 
+  useEffect(() => {
+    const errorsArray = [];
+    if (!userData.name) {
+      errorsArray.push("Name is required.");
+    }
+    if (!userData.email) {
+      errorsArray.push("Email is required.");
+    }
+    if (!userData.password) {
+      errorsArray.push("Password is required.");
+    }
+    setErrors(errorsArray);
+    if (errorsArray.length == 0) {
+      setDisable(false);
+    } else {
+      setDisable(true);
+    }
+  }, [userData]);
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
@@ -78,7 +100,14 @@ const Register = () => {
           value={userData.password}
         />
         <br />
-        <input type="submit" value="Register" />
+        {errors.length > 0 && (
+          <div>
+            {errors.map((error, i) => (
+              <p key={i}>{error}*</p>
+            ))}
+          </div>
+        )}
+        <input disabled={disable} type="submit" value="Register" />
         <br />
       </form>
     </div>

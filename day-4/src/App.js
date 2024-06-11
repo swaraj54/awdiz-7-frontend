@@ -43,6 +43,15 @@ function App() {
         <Route path="/todo" element={<Todo />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        {/* useState 
+        useEffect 
+        useNavigate 
+        useParams
+        useReducer 
+        useContext 
+        useRef 
+        useMemo 
+        useCallback */}
       </Routes>
     </div>
   );
