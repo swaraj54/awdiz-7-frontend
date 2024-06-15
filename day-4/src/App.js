@@ -17,6 +17,7 @@ import InlineStyling from "./04-06/InlineStyling";
 import Todo from "./06-06/Todo";
 import Register from "./08-06/Register";
 import Login from "./08-06/Login";
+import Reducer from "./15-06/Reducer";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         <Route path="/todo" element={<Todo />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/reducer" element={<Reducer />} />
         {/* useState 
         useEffect 
         useNavigate 
