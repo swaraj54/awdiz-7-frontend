@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 
 function reducer(state, action) {
   console.log(state, action, "inside reducer function..");
@@ -19,6 +19,16 @@ export const AuthContext = createContext();
 function MyContextProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
   // Higher Order Component
+
+  // useEffect(() => {
+  //   alert("Page reloaded.");
+  //   // call another api to backend and use locally stored data.
+  //   retrive token from storage and send token to backend
+  //   token  decrypt -> userid 
+  //   {name :"awdiz"}
+  //   dispatch({type :"LOGIN" , payload })
+  // }, []);
+
   return (
     <AuthContext.Provider value={{ state, dispatch }}>
       {children}

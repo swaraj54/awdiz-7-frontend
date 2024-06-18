@@ -30,6 +30,7 @@ const Login = () => {
             success: true,
             message: "Login successfull.",
             userData: { name: "Awdiz" },
+            token :"jwttokenjnbhjvbhjknbhjknbawdhjkawd" 
           },
         };
         if (response.data.success) {
