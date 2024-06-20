@@ -18,6 +18,7 @@ import Todo from "./06-06/Todo";
 import Register from "./08-06/Register";
 import Login from "./08-06/Login";
 import Reducer from "./15-06/Reducer";
+import ReduxCounter from "./20-06/ReduxCounter";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/reducer" element={<Reducer />} />
+        <Route path="/redux-counter" element={<ReduxCounter />} />
         {/* useState 
         useEffect 
         useNavigate 

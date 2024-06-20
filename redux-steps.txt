@@ -1,0 +1,7 @@
+1. Install redux -> npm i redux react-redux 
+2. Create folder and files for actions reducers and store.
+3. Inside action.js file create action type (varible) and action creators (function who retun object)
+4. Inside Reducer.js create initialstate as object and reducer as a function who take props state and acction 
+5. Inside store.js use createStore which import from redux with reducer.
+6. Inside index.js use Provider with store.  
+7. Inside your component use useSelector to access state and use useDispatch to disptach action and import actions.

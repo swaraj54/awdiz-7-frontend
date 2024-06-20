@@ -7,6 +7,8 @@ import { BrowserRouter } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import MyContextProvider from "./context/auth.context";
 import ThemeContextProvider from "./context/theme.context";
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -39,7 +41,9 @@ root.render(
               },
             }}
           />
-          <App />
+          <Provider store={store}>
+            <App />
+          </Provider>
         </BrowserRouter>
       </MyContextProvider>
     </ThemeContextProvider>
