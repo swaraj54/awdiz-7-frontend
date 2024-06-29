@@ -19,6 +19,8 @@ import Register from "./08-06/Register";
 import Login from "./08-06/Login";
 import Reducer from "./15-06/Reducer";
 import ReduxCounter from "./20-06/ReduxCounter";
+import UseCallbackComponent from "./29-06/UseCallbackComponent";
+import UseMemoComponent from "./29-06/UseMemoComponent";
 
 function App() {
   return (
@@ -47,6 +49,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/reducer" element={<Reducer />} />
         <Route path="/redux-counter" element={<ReduxCounter />} />
+        <Route path="/use-callback" element={<UseCallbackComponent />} />
+        <Route path="/use-memo" element={<UseMemoComponent />} />
         {/* useState 
         useEffect 
         useNavigate 
