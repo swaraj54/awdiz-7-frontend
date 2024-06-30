@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { AuthContext } from "../context/auth.context";
+import Api from "../axiosConfig";
 
 const Login = () => {
   const { state, dispatch } = useContext(AuthContext);
@@ -24,7 +25,7 @@ const Login = () => {
     // api call to backend
     try {
       if (userData.email && userData.password) {
-        //   const response = await axios.post("https://awdiz-7/api/v1/user/login" , {userData});
+          //  const response = await Api.post("/user/login" , {userData});
         const response = {
           data: {
             success: true,
