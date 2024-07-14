@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import Api from "../axiosConfig";
 
 const Register = () => {
   const router = useNavigate();
@@ -25,10 +26,10 @@ const Register = () => {
     // api call to backend
     try {
       if (userData.name && userData.email && userData.password) {
-        //   const response = await axios.post("https://awdiz-7/api/v1/user/register" , {userData});
-        const response = {
-          data: { success: true, message: "Regsiter successfull." },
-        };
+          const response = await Api.post("/auth/register" , {userData});
+        // const response = {
+        //   data: { success: true, message: "Regsiter successfull." },
+        // };
         if (response.data.success) {
           setUserData({
             name: "",
@@ -46,7 +47,7 @@ const Register = () => {
       console.log(error, "error");
       //   console.log(error);
       //   error =  { data : { success : false, message : "Password is invalid."}}
-      toast.error(error.response.data.message);
+      toast.error(error.response.data.error);
     }
   }
 

@@ -25,15 +25,14 @@ const Login = () => {
     // api call to backend
     try {
       if (userData.email && userData.password) {
-          //  const response = await Api.post("/user/login" , {userData});
-        const response = {
-          data: {
-            success: true,
-            message: "Login successfull.",
-            userData: { name: "Awdiz" },
-            token :"jwttokenjnbhjvbhjknbhjknbawdhjkawd" 
-          },
-        };
+          const response = await Api.post("/auth/login" , {userData});
+        // const response = {
+        //   data: {
+        //     success: true,
+        //     message: "Login successfull.",
+        //     userData: { name: "Awdiz" },
+        //   },
+        // };
         if (response.data.success) {
           dispatch({ type: "LOGIN", payload: response.data.userData });
           // LOGIN(userData)
@@ -43,6 +42,9 @@ const Login = () => {
           });
           router("/");
           toast.success(response.data.message);
+        } else {
+          toast.error(response?.data?.error)
+          // console.log(response.data.error, "error")
         }
       } else {
         throw Error("All fields are mandatory.");
@@ -52,7 +54,7 @@ const Login = () => {
       console.log(error, "error");
       //   console.log(error);
       //   error =  { data : { success : false, message : "Password is invalid."}}
-      toast.error(error.response.data.message);
+      toast.error(error?.response?.data?.error);
     }
   }
 
