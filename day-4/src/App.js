@@ -23,6 +23,7 @@ import UseCallbackComponent from "./29-06/UseCallbackComponent";
 import UseMemoComponent from "./29-06/UseMemoComponent";
 import UseRefComponent from "./30-06/UseRefComponent";
 import UseRef2Component from "./30-06/UseRef2Component";
+import Cart from "./16-07/Cart";
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
         <Route path="/use-memo" element={<UseMemoComponent />} />
         <Route path="/use-ref" element={<UseRefComponent />} />
         <Route path="/use-ref-2" element={<UseRef2Component />} />
+        <Route path="/cart" element={<Cart />} />
         {/* useState 
         useEffect 
         useNavigate 
