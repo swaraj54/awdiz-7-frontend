@@ -24,6 +24,9 @@ import UseMemoComponent from "./29-06/UseMemoComponent";
 import UseRefComponent from "./30-06/UseRefComponent";
 import UseRef2Component from "./30-06/UseRef2Component";
 import Cart from "./16-07/Cart";
+import RegisterAdmin from "./20-07/RegisterAdmin";
+import LoginAdmin from "./20-07/LoginAdmin";
+import AddProduct from "./20-07/AddProduct";
 
 function App() {
   return (
@@ -50,6 +53,8 @@ function App() {
         <Route path="/todo" element={<Todo />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register-admin" element={<RegisterAdmin />} />
+        <Route path="/login-admin" element={<LoginAdmin />} />
         <Route path="/reducer" element={<Reducer />} />
         <Route path="/redux-counter" element={<ReduxCounter />} />
         <Route path="/use-callback" element={<UseCallbackComponent />} />
@@ -57,6 +62,7 @@ function App() {
         <Route path="/use-ref" element={<UseRefComponent />} />
         <Route path="/use-ref-2" element={<UseRef2Component />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/add-product" element={<AddProduct />} />
         {/* useState 
         useEffect 
         useNavigate 

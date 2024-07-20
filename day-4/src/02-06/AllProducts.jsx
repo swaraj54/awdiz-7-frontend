@@ -10,10 +10,10 @@ function AllProducts() {
     // alert("Hi from get Products.");
     setLoading(true);
     try {
-      const response = await axios.get("https://fakestoreapi.com/products");
+      const response = await axios.get("https://fakestoreapi.com/products"); // change
       //   console.log(response.data);
       setLoading(false);
-      setAllProducts(response.data);
+      setAllProducts(response.data); // change
     } catch (error) {
       console.log(error);
     }
@@ -195,7 +195,7 @@ function AllProducts() {
                 style={{ width: "80%", height: "70%" }}
                 src={product.image}
               />
-              <p>Title : {product.title}</p>
+              <p>Title : {product.name}</p>
               <p>Price : {product.price}/-</p>
             </div>
           ))}
