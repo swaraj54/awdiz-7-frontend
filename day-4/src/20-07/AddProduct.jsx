@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import Api from "../axiosConfig";
+import { AuthContext } from "../context/auth.context";
+import AuthRedirection from "../21-07/AuthRedirection";
 
 const AddProduct = () => {
+  const { state } = useContext(AuthContext);
+  // console.log(state, "state");
   const router = useNavigate();
   const [productData, setProductData] = useState({
     name: "",
@@ -14,9 +18,9 @@ const AddProduct = () => {
   });
   const [errors, setErrors] = useState([]);
   const [disable, setDisable] = useState(true);
-  console.log(errors, "errors");
+  // console.log(errors, "errors");
 
-  console.log(productData, "productData");
+  // console.log(productData, "productData");
   function handleChange(event) {
     // console.log(event.target.value, event.target.name);
     setProductData({ ...productData, [event.target.name]: event.target.value });
@@ -88,7 +92,21 @@ const AddProduct = () => {
     }
   }, [productData]);
 
+  // useEffect(() => {
+  //   if (state?.user) {
+  //     console.log(state?.user, "state?.user in add product");
+  //     if (state?.user?.role !== "admin") {
+  //       toast.error("You are not allowred to access this page.");
+  //       router("/");
+  //     }
+  //   } else {
+  //     toast.error("Login to access page.");
+  //     router("/login");
+  //   }
+  // }, [state]);
+
   return (
+    // <AuthRedirection>
     <div>
       <form onSubmit={handleSubmit}>
         <h1>Add New Product</h1>
@@ -148,6 +166,7 @@ const AddProduct = () => {
         <br />
       </form>
     </div>
+    // </AuthRedirection>
   );
 };
 

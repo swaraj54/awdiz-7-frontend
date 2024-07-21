@@ -27,10 +27,12 @@ import Cart from "./16-07/Cart";
 import RegisterAdmin from "./20-07/RegisterAdmin";
 import LoginAdmin from "./20-07/LoginAdmin";
 import AddProduct from "./20-07/AddProduct";
+import Navbar from "./21-07/Navbar";
 
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <Routes>
         <Route path="*" element={<NotFound />} />
         <Route path="/" element={<Home />} />

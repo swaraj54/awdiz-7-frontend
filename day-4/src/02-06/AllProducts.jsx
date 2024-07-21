@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Api from "../axiosConfig";
 
 function AllProducts() {
   const [allProducts, setAllProducts] = useState([]);
@@ -10,10 +11,12 @@ function AllProducts() {
     // alert("Hi from get Products.");
     setLoading(true);
     try {
-      const response = await axios.get("https://fakestoreapi.com/products"); // change
-      //   console.log(response.data);
-      setLoading(false);
-      setAllProducts(response.data); // change
+      const response = await Api.get("/product/get-all-product"); // change
+      if (response.data.success) {
+        //   console.log(response.data);
+        setLoading(false);
+        setAllProducts(response.data.products); // change
+      }
     } catch (error) {
       console.log(error);
     }

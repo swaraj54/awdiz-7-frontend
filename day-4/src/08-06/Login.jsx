@@ -25,7 +25,7 @@ const Login = () => {
     // api call to backend
     try {
       if (userData.email && userData.password) {
-          const response = await Api.post("/auth/login" , {userData});
+        const response = await Api.post("/auth/login", { userData });
         // const response = {
         //   data: {
         //     success: true,
@@ -43,7 +43,7 @@ const Login = () => {
           router("/");
           toast.success(response.data.message);
         } else {
-          toast.error(response?.data?.error)
+          toast.error(response?.data?.error);
           // console.log(response.data.error, "error")
         }
       } else {
@@ -83,6 +83,11 @@ const Login = () => {
         <input type="submit" value="Login" />
         <br />
       </form>
+      <button onClick={() => router("/register")}>Register ?</button>
+      <button onClick={() => router("/register-admin")}>
+        Admin Register ?
+      </button>
+      <button onClick={() => router("/login-admin")}>Admin Login ?</button>
     </div>
   );
 };
