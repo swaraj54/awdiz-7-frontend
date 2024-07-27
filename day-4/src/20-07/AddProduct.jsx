@@ -7,7 +7,7 @@ import AuthRedirection from "../21-07/AuthRedirection";
 
 const AddProduct = () => {
   const { state } = useContext(AuthContext);
-  // console.log(state, "state");
+  console.log(state, "state");
   const router = useNavigate();
   const [productData, setProductData] = useState({
     name: "",
@@ -40,6 +40,7 @@ const AddProduct = () => {
       ) {
         const response = await Api.post("/product/create-new-product", {
           productData,
+          userId : state?.user?.userId
         });
         // const response = {
         //   data: { success: true, message: "Regsiter successfull." },

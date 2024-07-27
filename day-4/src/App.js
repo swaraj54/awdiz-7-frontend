@@ -28,6 +28,8 @@ import RegisterAdmin from "./20-07/RegisterAdmin";
 import LoginAdmin from "./20-07/LoginAdmin";
 import AddProduct from "./20-07/AddProduct";
 import Navbar from "./21-07/Navbar";
+import YourAddedProducts from "./27-07/YourAddedProducts";
+import SingleProductPage from "./27-07/SingleProductPage";
 
 function App() {
   return (
@@ -65,6 +67,8 @@ function App() {
         <Route path="/use-ref-2" element={<UseRef2Component />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/add-product" element={<AddProduct />} />
+        <Route path="/your-added-products" element={<YourAddedProducts />} />
+        <Route path="/product/:id" element={<SingleProductPage />} />
         {/* useState 
         useEffect 
         useNavigate 

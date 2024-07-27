@@ -16,8 +16,14 @@ const Navbar = () => {
       }}
     >
       <h2 onClick={() => router("/")}>Home</h2>
+      {state?.user?.role == "user" && (
+        <h2 onClick={() => router("/all-products")}>All Product</h2>
+      )}
       {state?.user?.role == "admin" && (
         <h2 onClick={() => router("/add-product")}>Add Product</h2>
+      )}
+      {state?.user?.role == "admin" && (
+        <h2 onClick={() => router("/your-added-products")}>Added Products</h2>
       )}
       {state?.user ? (
         <>
